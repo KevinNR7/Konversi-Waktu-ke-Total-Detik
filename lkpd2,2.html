@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Waktu ke Detik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Konversi Waktu ke Total Detik</h2>
+    <label for="jam">Jam:</label>
+    <input type="number" id="jam" placeholder="0">
+    <label for="menit">Menit:</label>
+    <input type="number" id="menit" placeholder="0">
+    <label for="detik">Detik:</label>
+    <input type="number" id="detik" placeholder="0">
+    <br>
+    <button onclick="konversiWaktu()">Hitung Total Detik</button>
+    <p id="output"></p>
+
+    <script>
+        function konversiWaktu() {
+            let jam = parseInt(document.getElementById("jam").value) || 0;
+            let menit = parseInt(document.getElementById("menit").value) || 0;
+            let detik = parseInt(document.getElementById("detik").value) || 0;
+            
+            let totalDetik = (jam * 3600) + (menit * 60) + detik;
+            
+            document.getElementById("output").innerText = `Total detik adalah ${totalDetik}`;
+        }
+    </script>
+</body>
+</html>
